@@ -35,13 +35,7 @@ pipeline {
                 }
             }
         }
-        stage('Build Docker run') {
-            steps {
-                script {
-                    bat "docker run -p 435:4325 demo-service"
-                }
-            }
-        }
+       
 
          stage('Run with Docker Compose') {
             steps {
