@@ -28,5 +28,12 @@ pipeline {
                 bat 'mvn clean package'
             }
         }
+
+        stage('Code Analysis') {
+    steps {
+        echo 'Code analysis sonarqube'
+        bat 'mvn sonar:sonar' // assuming SonarQube is configured
+    }
+}
     }
 }
