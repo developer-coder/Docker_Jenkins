@@ -6,12 +6,6 @@ pipeline {
     }
 
     stages {
-        stage('Clone') {
-            steps {
-                git 'https://github.com/developer-coder/Docker_Jenkins.git'
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t $DOCKER_IMAGE .'
@@ -32,10 +26,10 @@ pipeline {
 
     post {
         success {
-            echo '✅ Build and Docker push successful!'
+            echo '✅ Docker build and push successful!'
         }
         failure {
-            echo '❌ Build or push failed.'
+            echo '❌ Docker build or push failed.'
         }
     }
 }
