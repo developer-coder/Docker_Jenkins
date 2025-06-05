@@ -17,8 +17,15 @@ pipeline {
 
         stage('Maven Test') {
             steps {
-                echo 'Running mvn compile...'
+                echo 'Running mvn test...'
                 bat 'mvn clean test'
+            }
+        }
+
+        stage('Maven Package') {
+            steps {
+                echo 'Running mvn package...'
+                bat 'mvn clean package'
             }
         }
     }
