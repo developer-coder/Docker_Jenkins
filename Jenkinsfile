@@ -1,6 +1,9 @@
 pipeline {
     agent any
-
+ environment {
+        IMAGE_NAME = 'demo-service'
+        IMAGE_TAG = 'latest'
+    }
     stages {
         stage('Hello') {
             steps {
