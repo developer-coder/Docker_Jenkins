@@ -35,7 +35,15 @@ pipeline {
                 }
             }
         }
-       
+
+        stage('Docker Status Check') {
+    steps {
+        script {
+            bat 'docker info'
+        }
+    }
+}
+
 
          stage('Run with Docker Compose') {
             steps {
